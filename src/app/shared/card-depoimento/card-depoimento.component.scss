@@ -1,0 +1,26 @@
+.card-depoimento {
+  width: 317px;
+  height: 100%;
+  background-color: #FEF7FF;
+  box-shadow: none;
+
+  div {
+    display: flex;
+    gap: 1rem;
+    img {
+      width: 56px;
+      height: 56px;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+
+      span:last-child {
+        font-weight: bold;
+      }
+    }
+  }
+
+
+}
