@@ -27,6 +27,9 @@ import { ModalComponent } from './shared/modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CountdownComponent } from './shared/countdown/countdown.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { DropdownUfComponent } from './shared/form-search/dropdown-uf/dropdown-uf.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormSearchComponent,
     ModalComponent,
     CountdownComponent,
+    DropdownUfComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule
   ],
   providers: [
     provideAnimationsAsync()

@@ -4,3 +4,9 @@ export interface Promocao {
   imagem: string;
   preco: number;
 }
+
+export interface UF {
+  id: number;
+  nome: string;
+  sigla: string;
+}
