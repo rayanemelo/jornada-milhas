@@ -2,6 +2,13 @@
   max-width: 320px;
   background-color: #FEF7FF;
   border-radius: 12px;
+  box-shadow: none;
+  border: 1px solid #CAC4D0;
+
+  img {
+    border-radius: 12px 12px 0 0;
+    width: 100%;
+  }
   button {
     width: 100%;
     margin: 0 16px 48px;
