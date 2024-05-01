@@ -1,1 +1,46 @@
-<p>modal works!</p>
+<section class="modal">
+ <div class="header">
+  <h2 mat-dialog-title>Viajante</h2>
+  <mat-dialog-actions>
+    <button mat-icon-button	 mat-dialog-close class="close">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-dialog-actions>
+
+ </div>
+  <mat-dialog-content>
+    <div class="selecao-idade">
+      <ul>
+        <li>
+          <span>Adultos</span>
+          <span>(Acima de 12 anos)</span>
+          <app-countdown />
+        </li>
+        <li>
+          <span>Crianças</span>
+          <span>(Entre 2 e 11 anos)</span>
+          <app-countdown />
+        </li>
+        <li>
+          <span>Bebês</span>
+          <span>(Até 2 anos)</span>
+          <app-countdown />
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p>Categoria</p>
+      <mat-chip-listbox aria-label="Categoria">
+        <mat-chip-option selected>Econômica</mat-chip-option>
+        <mat-chip-option>Executiva</mat-chip-option>
+    </mat-chip-listbox>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="footer">
+    <button mat-button color="primary" mat-dialog-close>Cancelar</button>
+    <button mat-raised-button color="primary" mat-dialog-close>Confirmar</button>
+  </mat-dialog-actions>
+
+
+
+</section>

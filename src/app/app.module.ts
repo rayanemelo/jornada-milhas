@@ -20,10 +20,12 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ModalComponent } from './shared/modal/modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CountdownComponent } from './shared/countdown/countdown.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { ModalComponent } from './shared/modal/modal.component';
     CardDepoimentoComponent,
     FormSearchComponent,
     ModalComponent,
+    CountdownComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { ModalComponent } from './shared/modal/modal.component';
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDialogModule
   ],
   providers: [
     provideAnimationsAsync()
