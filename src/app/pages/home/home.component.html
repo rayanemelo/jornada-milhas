@@ -4,12 +4,7 @@
   <app-form-search />
   <h2>Promoções</h2>
   <div class="card-wrapper">
-    <app-search-card></app-search-card>
-    <app-search-card></app-search-card>
-    <app-search-card></app-search-card>
-    <app-search-card></app-search-card>
-    <app-search-card></app-search-card>
-    <app-search-card></app-search-card>
+    <app-search-card  *ngFor="let item of promocoes" [promocao]="item" />
   </div>
   <h2>Depoimentos</h2>
   <div class="card-wrapper">
