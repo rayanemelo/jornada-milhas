@@ -1,14 +1,14 @@
 <app-card variant="secondary" class="form-search">
   <h2>Passagens</h2>
-  <form [formGroup]="formSearchService.formSearch">
+  <form [formGroup]="formSearchService.formSearch" (ngSubmit)="search()">
     <div class="flex-container">
       <mat-button-toggle-group aria-label="Tipo de passagem" formControlName="somenteIda">
         <mat-button-toggle [value]="false">Ida e Volta</mat-button-toggle>
         <mat-button-toggle [value]="true">Somente Ida</mat-button-toggle>
       </mat-button-toggle-group>
-      <mat-chip-listbox (click)="openDialog()" aria-label="Seleção de passagens">
-        <mat-chip-option selected>1 Adulto</mat-chip-option>
-        <mat-chip-option>Econômica</mat-chip-option>
+      <mat-chip-listbox aria-label="Seleção de passagens">
+        <mat-chip-option (click)="formSearchService.openDialog()" selected>{{formSearchService.getDescricaoPassageiros()}}</mat-chip-option>
+        <mat-chip-option (click)="formSearchService.openDialog()">{{formSearchService.obterControle('tipo').value}}</mat-chip-option>
       </mat-chip-listbox>
     </div>
     <div class="flex-container">

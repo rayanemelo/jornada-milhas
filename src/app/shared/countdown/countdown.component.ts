@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-countdown',
   templateUrl: './countdown.component.html',
-  styleUrl: './countdown.component.scss'
+  styleUrl: './countdown.component.scss',
 })
-export class CountdownComponent {
-
+export class CountdownComponent  {
+  @Input() value: number = 0;
+  @Input() increment!: () => void;
+  @Input() decrement!: () => void;
 }

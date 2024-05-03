@@ -1,11 +1,11 @@
 <div class="flex">
-  <button mat-mini-fab color="primary">
+  <button mat-mini-fab color="primary" (click)="decrement()">
     <mat-icon>remove</mat-icon>
   </button>
   <span>
-    1
+    {{ value }}
   </span>
-  <button color="primary" mat-mini-fab>
+  <button color="primary" mat-mini-fab (click)="increment()">
     <mat-icon>add</mat-icon>
   </button>
 </div>
