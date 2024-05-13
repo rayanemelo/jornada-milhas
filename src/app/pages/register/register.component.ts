@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { FormService } from '../../core/services/form.service';
 import { RegisterService } from '../../core/services/register.service';
 import { Usuario } from '../../core/types/type';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,8 @@ export class RegisterComponent {
 
   constructor(
     private formService: FormService,
-    private registerService: RegisterService
+    private registerService: RegisterService,
+    private router: Router
   ) { }
 
   registerForm!: FormGroup;
@@ -28,6 +30,7 @@ export class RegisterComponent {
       this.registerService.cadastrar(newUser).subscribe({
         next: (value) => {
           console.log('Cadastro realizado com sucesso', value);
+          this.router.navigate(['/login']);
         },
         error: (error) => {
           console.log('Erro ao realizar cadastro', error);
