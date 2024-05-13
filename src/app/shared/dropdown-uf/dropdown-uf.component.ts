@@ -19,7 +19,7 @@ export class DropdownUfComponent implements OnInit {
 
   filteredOptions$?: Observable<UF[]>;
 
-  constructor(private ufService: UfService) {}
+  constructor(private ufService: UfService) { }
 
   ngOnInit(): void {
     this.ufService.getUfs().subscribe((ufs) => {
@@ -32,11 +32,16 @@ export class DropdownUfComponent implements OnInit {
     );
   }
 
-  filtrarUfs(value: string): UF[] {
-    const valorFiltrado = value?.toLowerCase();
+  filtrarUfs(value: string | UF): UF[] {
+    const uf = typeof value === 'string' ? value : value.nome;
+    const valorFiltrado = uf?.toLowerCase();
     const result = this.ufs.filter(
       estado => estado.nome.toLowerCase().includes(valorFiltrado)
     )
     return result
+  }
+
+  displayFn(uf: UF): string {
+    return uf && uf.nome ? uf.nome : '';
   }
 }

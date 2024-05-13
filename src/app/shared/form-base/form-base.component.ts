@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UF } from '../../core/types/type';
 import { FormService } from '../../core/services/form.service';
+import { FormValidations } from '../../utils/form-validation';
 
 @Component({
   selector: 'app-form-base',
@@ -31,8 +32,8 @@ export class FormBaseComponent {
       genero: ['outro'],
       telefone: [null, Validators.required],
       estado: this.estadoControl,
-      confirmEmail: [null, [Validators.required, Validators.email]],
-      confirmPassword: [null, [Validators.required, Validators.minLength(3)]],
+      confirmEmail: [null, [Validators.required, Validators.email, FormValidations.equalTo('email')]],
+      confirmPassword: [null, [Validators.required, Validators.minLength(3), FormValidations.equalTo('senha')]],
       acceptTerms: [false, [Validators.requiredTrue]]
     });
     this.formService.setForm(this.cadastroForm);
