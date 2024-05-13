@@ -1,0 +1,105 @@
+<section class="register-component">
+  <mat-card class="register">
+    <div class="form-container">
+      <mat-card-header>
+        <mat-card-title class="title">Crie sua conta</mat-card-title>
+      </mat-card-header>
+      <div class="profile" *ngIf="perfilComponent">
+        <h2>Dados pessoais</h2>
+        <button mat-stroked-button color="primary">
+          <mat-icon>logout</mat-icon>
+          DESLOGAR
+        </button>
+      </div>
+      <form [formGroup]="cadastroForm">
+        <mat-card-content>
+          <mat-form-field appearance="outline">
+            <mat-label>Nome Completo</mat-label>
+            <input matInput type="text" name="nome" placeholder="Digite seu nome" formControlName="nome" />
+            <mat-error *ngIf="cadastroForm.get('nome')?.errors">Nome é obrigatório</mat-error>
+          </mat-form-field>
+
+          <div class="flex">
+            <mat-form-field class="input-container" appearance="outline">
+              <mat-label>Data de nascimento</mat-label>
+              <input matInput [matDatepicker]="nascimento" formControlName="nascimento" />
+              <mat-datepicker-toggle matIconSuffix [for]="nascimento"></mat-datepicker-toggle>
+              <mat-datepicker #nascimento></mat-datepicker>
+              <mat-error *ngIf="cadastroForm.get('nascimento')?.errors">Data de Nascimento é obrigatório</mat-error>
+            </mat-form-field>
+
+            <mat-radio-group name="genero" color="primary">
+              <mat-radio-button value="feminino" checked="true">Feminino</mat-radio-button>
+              <mat-radio-button value="masculino">Masculino</mat-radio-button>
+              <mat-radio-button value="naoInformado">Prefiro não informar</mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <div class="flex">
+            <mat-form-field appearance="outline">
+              <mat-label>CPF</mat-label>
+              <input matInput type="text" name="cpf" placeholder="Digite seu CPF" formControlName="cpf" />
+              <mat-error *ngIf="cadastroForm.get('cpf')?.errors">CPF é obrigatório</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Telefone</mat-label>
+              <input matInput type="text" name="telefone" placeholder="Digite seu telefone"
+                formControlName="telefone" />
+              <mat-error *ngIf="cadastroForm.get('telefone')?.errors">Telefone é obrigatório</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="flex">
+            <mat-form-field appearance="outline">
+              <mat-label>Cidade</mat-label>
+              <input matInput type="text" name="cidade" placeholder="Digite seu cidade" formControlName="cidade" />
+              <mat-error *ngIf="cadastroForm.get('cidade')?.errors">Cidade é obrigatório</mat-error>
+            </mat-form-field>
+
+            <app-dropdown-uf label="Estado" placeholder="Estado" [control]="estadoControl">></app-dropdown-uf>
+            <mat-error class="custom-error" *ngIf="estadoControl?.errors && estadoControl?.touched">Estado é
+              obrigatório</mat-error>
+
+          </div>
+
+          <div class="access" *ngIf="perfilComponent">
+            <h2>Dados de acesso</h2>
+          </div>
+
+          <div class="flex">
+            <mat-form-field appearance="outline">
+              <mat-label>E-mail</mat-label>
+              <input matInput type="email" name="email" placeholder="Digite seu e-mail" formControlName="email">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Confirmar E-mail</mat-label>
+              <input matInput type="email" name="confirmEmail" placeholder="Digite seu e-mail novamente"
+                formControlName="confirmEmail">
+            </mat-form-field>
+          </div>
+
+          <div class="flex">
+            <mat-form-field appearance="outline">
+              <mat-label>Senha</mat-label>
+              <input matInput type="password" placeholder="Digite sua senha" name="senha" formControlName="senha">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Confirmar Senha</mat-label>
+              <input matInput type="password" placeholder="Digite sua senha novamente" name="confirmPassword"
+                formControlName="confirmPassword">
+            </mat-form-field>
+          </div>
+
+          <mat-checkbox color="primary" name="acceptTerms" formControlName="acceptTerms">Li e aceito os termos e
+            condições deste cadastro.</mat-checkbox>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-flat-button color="primary" (click)="submit()">Criar minha conta</button>
+        </mat-card-actions>
+      </form>
+    </div>
+  </mat-card>
+</section>

@@ -1,0 +1,83 @@
+.register-component {
+  max-width: 50%;
+  min-height: 74%;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  .register {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 68px;
+  }
+
+  .flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    mat-form-field {
+      width: 100%;
+    }
+  }
+
+  .profile {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  .access {
+    border-top: 1px solid #908e92;
+    padding-top: 1rem;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 16px;
+
+    mat-card-header {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: center;
+
+      mat-card-title {
+        font-size: 32px;
+        font-weight: 400;
+      }
+    }
+
+    mat-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    mat-card-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: normal;
+
+      button {
+        margin: 0 8px;
+        margin-bottom: 16px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    a {
+      cursor: pointer;
+
+      &:active {
+        color: #551A8B;
+      }
+    }
+  }
+}

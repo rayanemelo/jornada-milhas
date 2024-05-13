@@ -29,8 +29,14 @@ import { CountdownComponent } from './shared/countdown/countdown.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import { DropdownUfComponent } from './shared/form-search/dropdown-uf/dropdown-uf.component';
+import { DropdownUfComponent } from './shared/dropdown-uf/dropdown-uf.component';
 import { PassengerSelectionComponent } from './shared/passenger-selection/passenger-selection.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { InputComponent } from './shared/input/input.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FormBaseComponent } from './shared/form-base/form-base.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +54,10 @@ import { PassengerSelectionComponent } from './shared/passenger-selection/passen
     CountdownComponent,
     DropdownUfComponent,
     PassengerSelectionComponent,
+    LoginComponent,
+    RegisterComponent,
+    InputComponent,
+    FormBaseComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,7 +75,9 @@ import { PassengerSelectionComponent } from './shared/passenger-selection/passen
     MatDialogModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatRadioModule,
+    MatCheckboxModule
   ],
   providers: [
     provideAnimationsAsync()

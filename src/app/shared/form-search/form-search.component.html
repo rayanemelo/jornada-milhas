@@ -7,22 +7,25 @@
         <mat-button-toggle [value]="true">Somente Ida</mat-button-toggle>
       </mat-button-toggle-group>
       <mat-chip-listbox aria-label="Seleção de passagens">
-        <mat-chip-option (click)="formSearchService.openDialog()" selected>{{formSearchService.getDescricaoPassageiros()}}</mat-chip-option>
-        <mat-chip-option (click)="formSearchService.openDialog()">{{formSearchService.obterControle('tipo').value}}</mat-chip-option>
+        <mat-chip-option (click)="formSearchService.openDialog()"
+          selected>{{formSearchService.getDescricaoPassageiros()}}</mat-chip-option>
+        <mat-chip-option
+          (click)="formSearchService.openDialog()">{{formSearchService.obterControle('tipo').value}}</mat-chip-option>
       </mat-chip-listbox>
     </div>
     <div class="flex-container">
 
-      <app-dropdown-uf label="Origem" iconPrefix="flight_takeoff"
-        [control]="formSearchService.obterControle('origem')" />
-
+      <div class="drop-container">
+        <app-dropdown-uf label="Origem" iconPrefix="flight_takeoff" placeholder="Origem"
+          [control]="formSearchService.obterControle('origem')" />
+      </div>
       <button mat-icon-button>
         <mat-icon>sync_alt</mat-icon>
       </button>
-
-      <app-dropdown-uf label="Destino" iconPrefix="flight_land"
-        [control]="formSearchService.obterControle('destino')" />
-
+      <div class="drop-container">
+        <app-dropdown-uf label="Destino" iconPrefix="flight_land" placeholder="Destino"
+          [control]="formSearchService.obterControle('destino')" />
+      </div>
       <mat-form-field class="input-container" appearance="outline">
         <mat-label>Data de ida</mat-label>
         <input matInput [matDatepicker]="ida" />

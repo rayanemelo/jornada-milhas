@@ -3,9 +3,12 @@
   display: block;
   .flex-container {
     display: flex;
-    align-items: center;
     gap: 12px;
     margin: 16px 0;
+  }
+
+  .drop-container {
+    max-width: 230px;
   }
 
   .mat-button-toggle-checked {
@@ -14,5 +17,9 @@
   h2 {
     font-size: 28px;
     margin-bottom: 20px;
+  }
+
+  .mat-mdc-raised-button {
+    height: 55px;
   }
 }

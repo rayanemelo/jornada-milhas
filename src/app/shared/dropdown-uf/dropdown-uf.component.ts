@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UfService } from '../../../core/services/uf.service';
-import { UF } from '../../../core/types/type';
+import { UfService } from '../../core/services/uf.service';
+import { UF } from '../../core/types/type';
 import { Observable, map, startWith } from 'rxjs';
 import { FormControl } from '@angular/forms';
 
@@ -13,6 +13,7 @@ export class DropdownUfComponent implements OnInit {
   @Input() label: string = 'UF';
   @Input() iconPrefix: string = '';
   @Input() control!: FormControl;
+  @Input() placeholder: string = ''
 
   ufs: UF[] = [];
 
